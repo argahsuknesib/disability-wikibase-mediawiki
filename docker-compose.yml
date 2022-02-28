@@ -96,8 +96,8 @@ services:
         aliases:
          - wdqs.svc
     environment:
-      # - WIKIBASE_HOST=wikibase.svc
-      - WIKIBASE_HOST=disabilitywiki.univ-st-etienne.fr
+      - WIKIBASE_HOST=wikibase.svc
+      # - WIKIBASE_HOST=disabilitywiki.univ-st-etienne.fr
       - WIKIBASE_SCHEME=https
       - WDQS_HOST=wdqs.svc
       - WDQS_PORT=9999
