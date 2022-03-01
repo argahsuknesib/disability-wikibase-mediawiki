@@ -33,7 +33,6 @@ services:
     restart: unless-stopped
     networks:
       default:
-        enable_ipv6: false
         aliases:
          - wikibase.svc
          # CONFIG - Add your real wikibase hostname here, only for internal names and when NOT terminating SSL outside the container.
@@ -68,7 +67,6 @@ services:
       - mysql_secrets.env
     networks:
       default:
-        enable_ipv6: false
         aliases:
          - mysql.svc
   wdqs-frontend:
@@ -81,7 +79,6 @@ services:
     - wdqs-proxy
     networks:
       default:
-        enable_ipv6: false # <<< set to false
         aliases:
          - wdqs-frontend.svc
     environment:
@@ -99,7 +96,6 @@ services:
     command: /runBlazegraph.sh
     networks:
       default:
-        enable_ipv6: false # <<< set to false
         aliases:
          - wdqs.svc
     environment:
@@ -121,7 +117,6 @@ services:
     - wdqs
     networks:
       default:
-        enable_ipv6: false # <<< set to false
         aliases:
          - wdqs-proxy.svc
   wdqs-updater:
@@ -133,7 +128,6 @@ services:
     - wikibase
     networks:
       default:
-        enable_ipv6: false # <<< set to false
         aliases:
          - wdqs-updater.svc
     environment:
@@ -147,7 +141,6 @@ services:
     restart: unless-stopped
     networks:
       default:
-        enable_ipv6: false # <<< set to false
         aliases:
          - elasticsearch.svc
     environment:
@@ -164,7 +157,6 @@ services:
      - quickstatements-data:/quickstatements/data
     networks:
       default:
-        enable_ipv6: false # <<< set to false
         aliases:
          - quickstatements.svc
     environment:
