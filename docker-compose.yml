@@ -32,6 +32,8 @@ services:
     - elasticsearch
     restart: unless-stopped
     networks:
+      app_net:
+        ipv4_address: 0.0.0.0
       default:
         aliases:
          - wikibase.svc
@@ -66,6 +68,8 @@ services:
     env_file:
       - mysql_secrets.env
     networks:
+      app_net:
+        ipv4_address: 0.0.0.0
       default:
         aliases:
          - mysql.svc
@@ -78,6 +82,8 @@ services:
     depends_on:
     - wdqs-proxy
     networks:
+      app_net:
+        ipv4_address: 0.0.0.0
       default:
         aliases:
          - wdqs-frontend.svc
@@ -92,6 +98,8 @@ services:
       - query-service-data:/wdqs/data
     command: /runBlazegraph.sh
     networks:
+      app_net:
+        ipv4_address: 0.0.0.0
       default:
         aliases:
          - wdqs.svc
@@ -113,6 +121,8 @@ services:
     depends_on:
     - wdqs
     networks:
+      app_net:
+        ipv4_address: 0.0.0.0
       default:
         aliases:
          - wdqs-proxy.svc
@@ -124,6 +134,8 @@ services:
     - wdqs
     - wikibase
     networks:
+      app_net:
+        ipv4_address: 0.0.0.0
       default:
         aliases:
          - wdqs-updater.svc
@@ -153,6 +165,8 @@ services:
     volumes:
      - quickstatements-data:/quickstatements/data
     networks:
+      app_net:
+        ipv4_address: 0.0.0.0
       default:
         aliases:
          - quickstatements.svc
