@@ -68,9 +68,8 @@ services:
     env_file:
       - mysql_secrets.env
     networks:
-      app_net:
-        ipv4_address: 0.0.0.0
       default:
+        ipv4_address: 0.0.0.0
         aliases:
          - mysql.svc
   wdqs-frontend:
@@ -82,9 +81,8 @@ services:
     depends_on:
     - wdqs-proxy
     networks:
-      app_net:
-        ipv4_address: 0.0.0.0
       default:
+        ipv4_address: 0.0.0.0
         aliases:
          - wdqs-frontend.svc
     environment:
@@ -98,9 +96,8 @@ services:
       - query-service-data:/wdqs/data
     command: /runBlazegraph.sh
     networks:
-      app_net:
-        ipv4_address: 0.0.0.0
       default:
+        ipv4_address: 0.0.0.0
         aliases:
          - wdqs.svc
     environment:
@@ -121,9 +118,8 @@ services:
     depends_on:
     - wdqs
     networks:
-      app_net:
-        ipv4_address: 0.0.0.0
       default:
+        ipv4_address: 0.0.0.0
         aliases:
          - wdqs-proxy.svc
   wdqs-updater:
@@ -134,9 +130,8 @@ services:
     - wdqs
     - wikibase
     networks:
-      app_net:
-        ipv4_address: 0.0.0.0
       default:
+        ipv4_address: 0.0.0.0
         aliases:
          - wdqs-updater.svc
     environment:
@@ -165,9 +160,8 @@ services:
     volumes:
      - quickstatements-data:/quickstatements/data
     networks:
-      app_net:
-        ipv4_address: 0.0.0.0
       default:
+        ipv4_address: 0.0.0.0
         aliases:
          - quickstatements.svc
     environment:
