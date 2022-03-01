@@ -33,7 +33,6 @@ services:
     restart: unless-stopped
     networks:
       default:
-        ipv4_address: 0.0.0.0
         aliases:
          - wikibase.svc
          # CONFIG - Add your real wikibase hostname here, only for internal names and when NOT terminating SSL outside the container.
@@ -68,7 +67,6 @@ services:
       - mysql_secrets.env
     networks:
       default:
-        ipv4_address: 0.0.0.0
         aliases:
          - mysql.svc
   wdqs-frontend:
@@ -81,7 +79,6 @@ services:
     - wdqs-proxy
     networks:
       default:
-        ipv4_address: 0.0.0.0
         aliases:
          - wdqs-frontend.svc
     environment:
@@ -96,7 +93,6 @@ services:
     command: /runBlazegraph.sh
     networks:
       default:
-        ipv4_address: 0.0.0.0
         aliases:
          - wdqs.svc
     environment:
@@ -118,7 +114,6 @@ services:
     - wdqs
     networks:
       default:
-        ipv4_address: 0.0.0.0
         aliases:
          - wdqs-proxy.svc
   wdqs-updater:
@@ -130,7 +125,6 @@ services:
     - wikibase
     networks:
       default:
-        ipv4_address: 0.0.0.0
         aliases:
          - wdqs-updater.svc
     environment:
@@ -160,7 +154,6 @@ services:
      - quickstatements-data:/quickstatements/data
     networks:
       default:
-        ipv4_address: 0.0.0.0
         aliases:
          - quickstatements.svc
     environment:
