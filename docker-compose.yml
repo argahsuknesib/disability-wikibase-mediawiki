@@ -32,9 +32,8 @@ services:
     - elasticsearch
     restart: unless-stopped
     networks:
-      app_net:
-        ipv4_address: 0.0.0.0
       default:
+        ipv4_address: 0.0.0.0
         aliases:
          - wikibase.svc
          # CONFIG - Add your real wikibase hostname here, only for internal names and when NOT terminating SSL outside the container.
