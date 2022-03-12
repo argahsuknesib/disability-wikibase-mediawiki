@@ -157,10 +157,10 @@ services:
         aliases:
          - quickstatements.svc
     environment:
-      - QS_PUBLIC_SCHEME_HOST_AND_PORT=http://localhost:9191
+      - QS_PUBLIC_SCHEME_HOST_AND_PORT=https://localhost:9191
       # - WB_PUBLIC_SCHEME_HOST_AND_PORT=https://disabilitywiki.univ-st-etienne.fr
-      - WB_PUBLIC_SCHEME_HOST_AND_PORT=http://localhost:8181
-      - WIKIBASE_SCHEME_AND_HOST=http://wikibase.svc
+      - WB_PUBLIC_SCHEME_HOST_AND_PORT=https://localhost:8181
+      - WIKIBASE_SCHEME_AND_HOST=https://wikibase.svc
       - WB_PROPERTY_NAMESPACE=122
       - "WB_PROPERTY_PREFIX=Property:"
       - WB_ITEM_NAMESPACE=120
