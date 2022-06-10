@@ -35,6 +35,7 @@ ${DOLLAR}wgLanguageCode = "${MW_SITE_LANG}";
 # ${DOLLAR}wgSitename = "${MW_SITE_NAME}";
 
 ${DOLLAR}wgSitename = "Disability Knowledge Graph";
+${DOLLAR}wgMainPageIsDomainRoot = true;
 
 ${DOLLAR}wgMetaNamespace = "Project";
 # Configured web paths & short URLs
